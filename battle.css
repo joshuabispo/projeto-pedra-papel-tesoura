@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+} /* Corpo da página */
+
+body {
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* de flex-start ao invés de center */
+    width: 100%;
+    min-height: 100vh;           /* permite que cresça se necessário */
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+.countdown {
+  margin-bottom: 70px;
+  color: #555;
+  font-size: 2.4vw;
+  font-weight: 600;
+}
+
+.arena {
+  display: flex;
+  flex-wrap: wrap; /* quebra em telas menores */
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.side-player,
+.side-machine {
+  border: 1px solid #ddd;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.side-player h2,
+.side-machine h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid #ddd;
+  font-size: 1.33rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  margin: 0;
+}
+
+.choice-img {
+    width: 100%;   /* adapta ao container */
+    height: auto;  /* mantém proporção */
+    max-height: 300px; 
+    object-fit: contain;
+} 
+
+.vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+} 
+
+/* Resultado */
+.result {
+  margin: 30px 0 30px;
+  font-size: 33px;
+  font-weight: 700;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Resultado com cores específicas */
+.result.win {
+  color: #037a2f;
+}
+
+.result.lose {
+  color: #c82131;
+}
+
+.result.tie {
+  color: #333;
+} 
+
+/* Esconder elementos */
+.result-hidden {
+  display: none;
+}
+
+/* Botões */
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+#play-again {
+  background: #2e7d32;
+  color: #fff;
+}
+
+#play-again:hover {
+  background: #1c4d1c;
+}
+
+#play-again:active {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
+#back-home {
+  background: #eee;
+  color: #333;
+}
+
+#back-home:hover {
+  background: #ccc;
+}
+
+#back-home:active {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.38rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  gap: 8px
+}
+
+/* Media query para telas até 920px */
+
+@media (max-width: 931px) {
+    .arena {
+        flex-direction: column; /* empilha */
+        align-items: center;
+        gap: 25px;
+    }
+
+    .side-player,
+    .side-machine {
+        width: 350px;       /* largura desejada */
+        max-width: 90%;     /* reduz proporcionalmente em telas menores */
+        height: auto;
+    }
+
+    .choice-img {
+        width: 100%;        /* preenche todo o container */
+        height: auto;       /* mantém proporção */
+        max-height: 350px;  /* opcional: não cresce demais */
+        object-fit: contain;
+    }
+
+    .vs {
+        font-size: 2rem; /* reduz o tamanho para se ajustar à coluna */
+        margin: 15px 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .label {
+        font-size: 2.5rem; /* reduz tamanho do placar */
+    }
+
+    .buttons {
+        width: 80%;       /* botões centralizados e responsivos */
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 370px) {
+    .side-player,
+    .side-machine {
+        width: 90%;       /* container encolhe junto com a tela */
+        max-width: 350px; /* limite máximo */
+    }
+
+    .choice-img {
+        width: 100%;      /* imagem sempre preenche o container */
+        height: auto;     /* mantém proporção */
+        max-height: none; /* remove limite de altura */
+    }
+
+    .vs {
+        font-size: 1.5rem; /* ajusta VS para caber */
+    }
+
+    .label {
+        font-size: 2rem;   /* reduz placar para caber */
+    }
+}

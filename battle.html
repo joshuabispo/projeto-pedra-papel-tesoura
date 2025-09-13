@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="battle.css">
+    <title>Duelo - Jogador vs Maquina</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1>PEDRA, PAPEL OU TESOURA</h1>
+        <div class="countdown" id="countdown">Duelo em <strong id="seconds">3</strong>...</div>
+
+        <div class="arena">
+            <div class="side-player">
+                <h2>Jogador</h2>
+                <img id="player-img" class="choice-img" src="./img/rock.png" alt="Escolha do jogador">
+            </div>
+
+            <div class="vs">
+                <h4>VS</h4>
+                <div id="result" class="result result-hidden"></div>
+
+                <div class="buttons">
+                    <button id="play-again">Jogar de novo</button>
+                    <button id="back-home">Voltar ao menu</button>
+                </div>
+                <div class="label" id="player-label">0<span class="label" id="machine-label">:0</span></div>
+            </div>
+
+            <div class="side-machine">
+                <h2>Máquina</h2>
+                <img id="machine-img" class="choice-img" src="./img/rock.png" alt="Máquina">
+            </div>
+        </div>
+
+    </main>
+
+<script src="battle.js"></script>
+</body>
+</html>
